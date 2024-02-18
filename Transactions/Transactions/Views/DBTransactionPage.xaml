@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="Transactions.Views.DBTransactionPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Name:"/>
+            <Entry Text="{Binding Name}" />
+
+            <Label Text="Selected Transaction Type:" FontSize="Small" />
+            <Label Text="{Binding SelectedTransaction.TransactionType}" FontSize="Small" />
+
+            <Label Text="Amount:"/>
+            <Entry Text="{Binding Amount}" />
+
+            <Label Text="Selected Description Category:" FontSize="Small" />
+            <Label Text="{Binding SelectedTransaction.DescriptionCategory}" FontSize="Small" />
+
+
+            <Label Text="Date:"/>
+            <!-- Используйте DatePicker для выбора даты -->
+            <DatePicker Date="{Binding Date}" />
+            
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Salvesta" Text="Salvesta" Clicked="Salvesta_Clicked" />
+                <Button x:Name="Kustuta" Text="Kustuta" Clicked="Kustuta_Clicked" />
+                <Button x:Name="Loobu" Text="Loobu" Clicked="Loobu_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

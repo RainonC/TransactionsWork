@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Transactions.Views.TransactionsListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Lisa" Command="{Binding CreateTransactionCommand}" />
+            <ListView x:Name="booksList" ItemsSource="{Binding Transactions}"
+                      SelectedItem="{Binding SelectedTransaction, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontSize="Medium" />
+                                    <Label Text="{Binding TransactionType}" FontSize="Small" />
+                                    <Label Text="{Binding Amount}" FontSize="Small" />
+                                    
+
+                                    <!-- Добавлены новые метки для отображения выбранных значений -->
+                                    <Label Text="Selected Transaction Type:" FontSize="Small" />
+                                    <Label Text="{Binding SelectedTransaction.TransactionType}" FontSize="Small" />
+
+                                    <Label Text="Selected Description Category:" FontSize="Small" />
+                                    <Label Text="{Binding SelectedTransaction.DescriptionCategory}" FontSize="Small" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
